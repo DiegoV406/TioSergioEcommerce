@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="layouts/layout">
+
+<head>
+    <title>Carrinho | Tio Sergio</title>
+
+    <link rel="stylesheet" th:href="@{/css/carrinho.css}">
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+<main class="container my-5">
+
+    <h3 class="mb-4">Carrinho de Compras</h3>
+
+    <div class="row">
+
+        <!-- TABELA DE PRODUTOS -->
+        <div class="col-md-8">
+
+            <table class="table align-middle">
+
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaCarrinho">
+                    <!-- preenchido via JS -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- RESUMO DO PEDIDO -->
+        <div class="col-md-4">
+
+            <div class="border rounded p-4 shadow-sm">
+
+                <h5>Total</h5>
+
+                <h4 class="text-success mt-3" id="totalCarrinho">
+                    R$ 0,00
+                </h4>
+
+                <button id="btnFinalizar"
+                        class="btn btn-warning fw-bold w-100 mt-4">
+                    Finalizar Compra
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+  
+ <th:block layout:fragment="scripts">
+<script th:src="@{/js/carrinho.js}"></script>
+</th:block>   
+
+</body>
+</html>

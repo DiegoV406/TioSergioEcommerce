@@ -1,0 +1,35 @@
+{
+    "elements": {},
+    "attributes": {
+        "th:text": {
+            "context": "h6"
+        },
+        "layout:decorate": {
+            "context": "html"
+        },
+        "th:onclick": {
+            "context": "button"
+        },
+        "layout:title-pattern": {
+            "context": "title"
+        },
+        "th:src": {
+            "context": "img"
+        },
+        "th:replace": {
+            "context": "div"
+        },
+        "th:href": {
+            "context": "link"
+        },
+        "th:fragment": {
+            "context": "div"
+        },
+        "th:each": {
+            "context": "div"
+        },
+        "layout:fragment": {
+            "context": "div"
+        }
+    }
+}

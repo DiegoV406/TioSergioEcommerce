@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="layouts/layout">
+
+<head>
+    <title>Cadastro | Tio Sergio</title>
+
+    <link rel="stylesheet" th:href="@{/css/cadastro.css}">
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+<main class="container my-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card shadow-sm p-4">
+
+                <h4 class="text-center mb-4">
+                    Faça o seu cadastro
+                </h4>
+
+                <form id="formCadastro">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        <input type="text"
+                               id="nome"
+                               class="form-control"
+                               required
+                               pattern="[A-Za-zÀ-ÿ ]+"
+                               title="Digite apenas letras. Ex: Maria Clara">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">E-mail</label>
+                        <input type="email"
+                               id="email"
+                               class="form-control"
+                               required
+                               placeholder="exemplo@email.com">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Senha</label>
+                        <input type="password"
+                               id="senha"
+                               class="form-control"
+                               required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100 mb-3">
+                        Criar a Conta
+                    </button>
+
+                    <p class="text-center mb-0">
+                        Já possui uma conta?
+                        <a th:href="@{/login}">
+                            Faça login
+                        </a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script th:src="@{/js/cadastro.js}"></script>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html lang="pt-br"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="layouts/layout">
+
+<head>
+<title>Meus Pedidos</title>
+<link rel="stylesheet" th:href="@{/css/meusPedidos.css}">
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+<section class="container my-5">
+
+<h3 class="mb-4">Meus Pedidos</h3>
+
+<div id="listaPedidos">
+
+<!-- pedidos carregados via JS -->
+
+</div>
+
+</section>
+
+</div>
+    
+<th:block layout:fragment="scripts">
+<script th:src="@{/js/meusPedidos.js}"></script>
+</th:block>
+
+</body>
+
+</html>

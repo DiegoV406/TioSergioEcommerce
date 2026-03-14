@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="layouts/layout">
+
+<head>
+
+<title>Login | Tio Sergio</title>
+
+<link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+<main class="container my-5">
+
+<div class="row justify-content-center">
+
+<div class="col-md-5">
+
+<h4 class="mb-4 text-center">
+Faça o seu login
+</h4>
+
+<form id="formLogin">
+
+<div class="mb-3">
+<label class="form-label">Email</label>
+
+<input type="email"
+id="email"
+class="form-control"
+required
+placeholder="exemplo@email.com">
+
+</div>
+
+<div class="mb-4">
+
+<label class="form-label">Senha</label>
+
+<input type="password"
+id="senha"
+class="form-control"
+required>
+
+</div>
+
+<button class="btn btn-success w-100 mb-3">
+Iniciar
+</button>
+
+<p class="text-center">
+
+Não possui uma conta?
+
+<a th:href="@{/cadastro}">
+Cadastre-se
+</a>
+
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</main>
+
+
+</div>
+    
+<th:block layout:fragment="scripts">
+<script th:src="@{/js/login.js}"></script>
+</th:block>   
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="pt-br"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="layouts/layout">
+
+<head>
+<title>Início</title>
+<link rel="stylesheet" th:href="@{/css/inicio.css}">
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+<!-- BANNER -->
+<section class="container mb-4">
+
+<img th:src="@{/img/banner.png}"
+     class="img-fluid rounded shadow-sm">
+
+</section>
+
+<!-- CATEGORIAS -->
+<section class="container my-5">
+
+<h4 class="mb-4">Categorias</h4>
+
+<div class="row text-center">
+
+<!-- LUBRIFICANTES -->
+<div class="col-6 col-md-3 mb-3">
+
+<a th:href="@{/produtos?(categorias='Lubrificantes')}"
+   class="text-decoration-none text-dark">
+
+<div class="card category-card p-4">
+<i class="bi bi-droplet-fill category-icon"></i>
+
+<p class="mt-2 mb-0 fw-semibold">
+Lubrificantes
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+
+<!-- FAROL -->
+<div class="col-6 col-md-3 mb-3">
+
+<a th:href="@{/produtos?(categorias='Farol')}"
+   class="text-decoration-none text-dark">
+
+<div class="card category-card p-4">
+
+<i class="bi bi-lightbulb category-icon"></i>
+
+<p class="mt-2 mb-0 fw-semibold">
+Farol
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+
+<!-- SUSPENSÃO -->
+<div class="col-6 col-md-3 mb-3">
+
+<a th:href="@{/produtos?(categorias='Suspensão')}"
+   class="text-decoration-none text-dark">
+
+<div class="card category-card p-4">
+
+<i class="bi bi-wrench-adjustable-circle category-icon"></i>
+
+<p class="mt-2 mb-0 fw-semibold">
+Suspensão
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+
+<!-- PNEUS -->
+<div class="col-6 col-md-3 mb-3">
+
+<a th:href="@{/produtos?(categorias='Pneus')}"
+   class="text-decoration-none text-dark">
+
+<div class="card category-card p-4">
+
+<i class="bi bi-vinyl-fill category-icon"></i>
+
+<p class="mt-2 mb-0 fw-semibold">
+Pneus
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUTOS -->
+<section >
+
+<h2 class="mb-4">Produtos</h2>
+
+<div class="row">
+
+<div class="col-md-3 mb-4"
+     th:each="produto : ${produtos}">
+
+<div class="card h-100 ">
+
+<div class="produto-img-container">
+
+    <img th:src="@{'/img/' + ${produto.imagem}}"
+         th:alt="${produto.nome}"
+         class="produto-img"
+         onerror="this.src='/img/sem-imagem.png'">
+
+</div>
+
+<div class="card-body d-flex flex-column text-center">
+
+<h6 th:text="${produto.nome}"></h6>
+
+<small class="text-muted">
+
+<span th:text="${produto.modelo}"></span>
+•
+
+<span th:text="${produto.ano}"></span>
+•
+
+<span th:text="${produto.lado}"></span>
+
+</small>
+
+<p class="fw-bold text-success mt-2">
+
+R$
+<span th:text="${#numbers.formatDecimal(produto.preco,1,2)}"></span>
+
+</p>
+
+<div class="mt-auto d-grid gap-2">
+
+<button class="btn btn-warning fw-bold "
+
+th:data-id="${produto.id}"
+th:data-nome="${produto.nome}"
+th:data-preco="${produto.preco}"
+th:data-imagem="${produto.imagem}"
+
+onclick="comprarProduto(this)">
+
+Comprar
+
+</button>
+
+<a th:href="@{/detalhes(id=${produto.id})}"
+   class="btn btn-outline-dark btn-sm">
+Ver detalhes
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script th:src="@{/js/inicio.js}"></script>
+</div>
+
+</body>
+
+</html>

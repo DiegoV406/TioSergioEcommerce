@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="layouts/layout">
+
+<head>
+<title>Detalhes do Produto</title>
+
+<link rel="stylesheet" th:href="@{/css/detalhes.css}">
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+<div class="container my-5">
+
+<div class="row">
+
+<!-- IMAGEM -->
+<div class="col-md-5">
+
+<img th:src="@{'/img/' + ${produto.imagem}}"
+     th:alt="${produto.nome}"
+     class="product-image"
+     style="max-width: 100%; object-fit:cover"
+     onerror="this.src='/img/sem-imagem.png'">
+
+</div>
+
+<!-- INFORMAÇÕES -->
+<div class="col-md-7">
+
+<h3 th:text="${produto.nome}"></h3>
+
+<p>
+<strong>Modelo:</strong>
+<span th:text="${produto.modelo}"></span>
+</p>
+
+<p>
+<strong>Lado:</strong>
+<span th:text="${produto.lado}"></span>
+</p>
+
+<h4 class="text-success fw-bold">
+R$ <span th:text="${#numbers.formatDecimal(produto.preco,1,2)}"></span>
+</h4>
+
+<button class="btn btn-warning fw-bold mb-4"
+
+th:data-id="${produto.id}"
+th:data-nome="${produto.nome}"
+th:data-preco="${produto.preco}"
+th:data-imagem="${produto.imagem}"
+
+onclick="comprarProduto(this)">
+
+Comprar
+
+</button>
+
+<h5>Descrição</h5>
+
+<p th:text="${produto.descricao}"></p>
+
+</div>
+
+</div>
+
+<hr class="my-5">
+
+<h5>Especificações técnicas</h5>
+
+<ul class="list-group mt-3">
+
+<li class="list-group-item">
+<strong>Modelo:</strong>
+<span th:text="${produto.modelo}"></span>
+</li>
+
+<li class="list-group-item">
+<strong>Ano:</strong>
+<span th:text="${produto.ano}"></span>
+</li>
+
+<li class="list-group-item">
+<strong>Lado:</strong>
+<span th:text="${produto.lado}"></span>
+</li>
+
+<li class="list-group-item">
+<strong>Categoria:</strong>
+<span th:text="${produto.categoria.nome}"></span>
+</li>
+
+</ul>
+
+</div>
+
+<script th:src="@{/js/detalhes.js}"></script>
+
+</div>
+
+</body>
+</html>

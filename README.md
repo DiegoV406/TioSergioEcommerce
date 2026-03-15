@@ -14,13 +14,20 @@ O sistema permite que usuários naveguem por produtos, adicionem itens ao carrin
 📌 Status do Projeto
 
 🚧 Em desenvolvimento
+
 ✅ Estrutura MVC implementada
+
 ✅ API REST para usuários e pedidos
+
 ✅ Integração com MySQL
+
 ⚙️ Novas funcionalidades em evolução
 
+
 🚀 Funcionalidades Principais
+
 👤 Usuários
+
 
 Cadastro de usuários
 
@@ -32,6 +39,7 @@ Sessão simulada no frontend com LocalStorage
 
 📦 Produtos
 
+
 Listagem de produtos cadastrados
 
 Exibição com imagens
@@ -39,6 +47,7 @@ Exibição com imagens
 Organização por categorias
 
 Página de detalhes do produto
+
 
 🛒 Carrinho de Compras
 
@@ -49,6 +58,7 @@ Atualizar quantidade
 Remover itens
 
 Armazenamento temporário no LocalStorage
+
 
 📋 Pedidos
 
@@ -68,16 +78,21 @@ Produtos
 
 Consulta de histórico de pedidos do usuário
 
+
 🧠 Arquitetura do Sistema
 
 O projeto segue o padrão MVC (Model-View-Controller):
 
-Camada	Responsabilidade
-Controller	Recebe requisições HTTP e retorna respostas
-Service	Contém regras de negócio
-Repository	Comunicação com banco via Spring Data JPA
-Entity	Representação das tabelas do banco
-View (Thymeleaf)	Renderização das páginas HTML
+Controller:	Recebe requisições HTTP e retorna respostas
+
+Service:	Contém regras de negócio
+
+Repository:	Comunicação com banco via Spring Data JPA
+
+Entity:	Representação das tabelas do banco
+
+View: (Thymeleaf)	Renderização das páginas HTML
+
 
 🗄️ Estrutura do Banco de Dados
 
@@ -96,19 +111,30 @@ Itens do Pedido
 Relacionamentos:
 
 Usuario 1 --- N Pedido
+
 Pedido 1 --- N ItemPedido
+
 Produto 1 --- N ItemPedido
+
 Categoria 1 --- N Produto
+
 
 🔧 Tecnologias Utilizadas
 
 ☕ Java 17	Linguagem principal do projeto
+
 🌱 Spring Boot	Framework backend
+
 🗄️ MySQL	Banco de dados
+
 📦 Spring Data JPA / Hibernate	Persistência e ORM
+
 🌐 Thymeleaf	Renderização de páginas HTML
+
 🎨 Bootstrap 5	Layout responsivo
+
 ⚡ JavaScript (Fetch API)	Integração com APIs
+
 📂 LocalStorage	Persistência do carrinho no frontend
 
 

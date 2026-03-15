@@ -1,5 +1,12 @@
 🔧 Sistema de E-commerce - Autopeças Tio Sergio
 
+![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?logo=springboot&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?logo=thymeleaf&logoColor=white)
+
+
 📦 Sistema web de e-commerce de autopeças desenvolvido com Spring Boot, Thymeleaf e MySQL, aplicando arquitetura em camadas, boas práticas de desenvolvimento e organização de código.
 
 O sistema permite que usuários naveguem por produtos, adicionem itens ao carrinho e realizem pedidos, garantindo organização e facilidade de manutenção.
@@ -104,33 +111,7 @@ Categoria 1 --- N Produto
 ⚡ JavaScript (Fetch API)	Integração com APIs
 📂 LocalStorage	Persistência do carrinho no frontend
 
-📁 Estrutura do Projeto
-src
- ├── controller
- │
- ├── service
- │
- ├── repository
- │
- ├── data
- │   ├── UsuarioEntity
- │   ├── ProdutoEntity
- │   ├── CategoriaEntity
- │   ├── PedidoEntity
- │   └── ItemPedidoEntity
- │
- ├── templates
- │   ├── layout
- │   ├── inicio
- │   ├── produtos
- │   ├── carrinho
- │   └── pedidos
- │
- └── static
-     ├── css
-     ├── js
-     └── img
-     
+
 🎯 Funcionalidades em Desenvolvimento
 
 🔎 Filtro de produtos por categoria
